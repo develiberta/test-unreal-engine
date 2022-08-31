@@ -26,4 +26,10 @@ public:
 private:
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* Mesh;
+
+	UPROPERTY(EditAnywhere, Category=BattleStat)
+	int32 Hp;
+
+	UPROPERTY(EditAnywhere, Category=BattleStat)
+	int32 Mp;
 };
