@@ -19,6 +19,7 @@ AMyActor::AMyActor()
 	{
 		Mesh->SetStaticMesh(SM.Object);
 	}
+
 }
 
 // Called when the game starts or when spawned
@@ -26,6 +27,8 @@ void AMyActor::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	// 카테고리, 로깅 수준, 형식, 인자
+	UE_LOG(LogTemp, Warning, TEXT("BeginPaly %d"), 3);
 }
 
 // Called every frame
@@ -33,5 +36,5 @@ void AMyActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	AddActorLocalRotation(FRotator(0.f, RotateSpeed * DeltaTime, 0.f));
 }
-
