@@ -28,7 +28,7 @@ void AMyActor::BeginPlay()
 	Super::BeginPlay();
 	
 	// 카테고리, 로깅 수준, 형식, 인자
-	UE_LOG(LogTemp, Warning, TEXT("BeginPaly %d"), 3);
+	UE_LOG(LogTemp, Warning, TEXT("BeginPlay %d"), 3);
 }
 
 // Called every frame
