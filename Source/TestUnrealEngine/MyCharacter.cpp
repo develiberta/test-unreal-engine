@@ -5,6 +5,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "MyAnimInstance.h"
 
 // Sets default values
 AMyCharacter::AMyCharacter()
@@ -57,6 +58,8 @@ void AMyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompone
 
 	PlayerInputComponent->BindAction(TEXT("Jump"), EInputEvent::IE_Pressed, this, &AMyCharacter::Jump);
 
+	PlayerInputComponent->BindAction(TEXT("Attack"), EInputEvent::IE_Pressed, this, &AMyCharacter::Attack);
+
 }
 
 void AMyCharacter::UpDown(float Value)
@@ -78,4 +81,13 @@ void AMyCharacter::LeftRight(float Value)
 void AMyCharacter::Yaw(float Value)
 {
 	AddControllerYawInput(Value);
+}
+
+void AMyCharacter::Attack()
+{
+	auto AnimInstance = Cast<UMyAnimInstance>(GetMesh()->GetAnimInstance());
+	if (AnimInstance)
+	{
+		AnimInstance->PlayAttackMontage();
+	}
 }

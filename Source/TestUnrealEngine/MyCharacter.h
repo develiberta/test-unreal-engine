@@ -30,6 +30,8 @@ public:
 	void LeftRight(float Value);
 	void Yaw(float Value);
 
+	void Attack();
+
 private:
 	UPROPERTY(VisibleAnywhere)
 	class USpringArmComponent* SpringArm;
