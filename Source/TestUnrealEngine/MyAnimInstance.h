@@ -13,6 +13,8 @@ UCLASS()
 class TESTUNREALENGINE_API UMyAnimInstance : public UAnimInstance
 {
 	GENERATED_BODY()
+
+	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 	
 private:
 
