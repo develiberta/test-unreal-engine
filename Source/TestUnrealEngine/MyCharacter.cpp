@@ -93,7 +93,6 @@ void AMyCharacter::Attack()
 
 	AnimInstance->PlayAttackMontage();
 
-
 	IsAttacking = true;
 }
 
